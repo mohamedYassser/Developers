@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dev_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <action
+        android:id="@+id/action_to_loginFragment"
+        app:launchSingleTop="true"
+        app:destination="@id/loginFragment" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.codingtester.developers.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/homeFragment" />
+
+
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.codingtester.developers.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addDeveloperFragment"
+            app:destination="@id/addDeveloperFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allDevelopersFragment"
+            app:destination="@id/allDevelopersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allDevelopersFragment"
+        android:name="com.codingtester.developers.AllDevelopersFragment"
+        android:label="fragment_all_developers"
+        tools:layout="@layout/fragment_all_developers" />
+    <fragment
+        android:id="@+id/addDeveloperFragment"
+        android:name="com.codingtester.developers.AddDeveloperFragment"
+        android:label="fragment_add_developer"
+        tools:layout="@layout/fragment_add_developer" />
+</navigation>
